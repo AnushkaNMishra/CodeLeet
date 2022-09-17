@@ -12,7 +12,7 @@ public:
   
             }
        
-        int result=product-sum;
-        return result;
+        
+        return product-sum;
     }
 };
