@@ -12,9 +12,8 @@ public:
             }
             i++;
         }
-        cout<<count;
-        count=count/n;
-        return count*100;
+        
+        return count/n*100;
         
     }
 };
