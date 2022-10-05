@@ -1,23 +1,23 @@
 class Solution {
 public:
     void setZeroes(vector<vector<int>>& matrix) {
-        int n=matrix.size();
-        int m=matrix[0].size();
-        vector<bool> colZero(m),rowZero(n);
-        for(int i=0;i<n;i++){
-            for(int j=0;j<m;j++){
+        int m=matrix.size();
+        int n=matrix[0].size();
+        vector<bool> row(m),col(n);
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
                 if(matrix[i][j]==0){
-                    colZero[j]=rowZero[i]=true;
+                    row[i]=col[j]=true;
                 }
             }
         }
-            for(int i=0;i<n;i++){
-                for(int j=0;j<m;j++){
-                    if(rowZero[i] || colZero[j]){
-                        matrix[i][j]=0;
-                    }
+        for(int i=0;i<m;i++){
+            for(int j=0;j<n;j++){
+                if(row[i] || col[j]){
+                    matrix[i][j]=0;
                 }
             }
+        }
         
     }
 };
