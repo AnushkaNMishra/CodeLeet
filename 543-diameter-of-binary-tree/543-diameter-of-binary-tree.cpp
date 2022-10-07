@@ -16,7 +16,7 @@ public:
         height(root,d);
         return d;
     }
-private:
+//private:
     int height(TreeNode* root, int& d){
         if(!root){return 0;}
         int lh=height(root->left,d);
