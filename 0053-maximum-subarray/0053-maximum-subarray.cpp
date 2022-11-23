@@ -11,5 +11,4 @@ public:
         return maxi;
     }
 };
-
 //kadane's algorithm
