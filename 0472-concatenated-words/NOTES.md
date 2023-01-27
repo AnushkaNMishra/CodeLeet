@@ -3,3 +3,7 @@
 // here we are splitting the words and finding the concatenation,
 // even if the prefix is found to be true, then again check for the suffix(whether its also concatenated)
 // meta
+*
+// o(n*l^4) without memoization
+where l=word.size();
+*
