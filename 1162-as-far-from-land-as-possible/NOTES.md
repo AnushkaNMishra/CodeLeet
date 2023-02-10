@@ -1,0 +1,1 @@
+https://leetcode.com/problems/as-far-from-land-as-possible/discuss/1816631/C%2B%2B-BFS-Crystal-Clear-With-Images
