@@ -28,4 +28,3 @@ public:
     }
 };
 
-//https://leetcode.com/problems/find-k-pairs-with-smallest-sums/discuss/84551/simple-Java-O(KlogK)-solution-with-explanation
