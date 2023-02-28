@@ -17,12 +17,10 @@ public:
                     pq.push(nums[i]);
                 }
                 else{
-                    if(pq.top()==nums[i]){
-                        continue;
-                    }
-                    else{
+                    if(pq.top()!=nums[i]){
                         pq.push(nums[i]);
                     }
+                    
                 }
             }
         }
