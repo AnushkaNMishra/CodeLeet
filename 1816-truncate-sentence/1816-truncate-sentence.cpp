@@ -14,10 +14,9 @@ public:
             ans+=" ";
             k--;
         }
-        s.erase();
-        ans.pop_back();
-        s=ans;
         
-        return s;
+        ans.pop_back();
+        
+        return ans;
     }
 };
