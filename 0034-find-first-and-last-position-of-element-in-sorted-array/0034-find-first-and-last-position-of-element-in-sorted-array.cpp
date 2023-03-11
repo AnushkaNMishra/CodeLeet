@@ -15,7 +15,7 @@ public:
                 r=mid-1;
             }
             else{
-                if(mid==l || nums[mid]!=nums[mid-1]){
+                if(mid==0 || nums[mid]!=nums[mid-1]){
                     v[0]=mid;
                     break;
                 }
@@ -37,7 +37,7 @@ public:
                 r=mid-1;
             }
             else{
-                if(mid==r || nums[mid]!=nums[mid+1]){
+                if(mid==nums.size()-1 || nums[mid]!=nums[mid+1]){
                     v[1]=mid;
                     break;
                 }
