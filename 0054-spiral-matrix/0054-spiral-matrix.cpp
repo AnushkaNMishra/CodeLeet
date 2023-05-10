@@ -1,35 +1,63 @@
 class Solution {
 public:
     vector<int> spiralOrder(vector<vector<int>>& matrix) {
-        vector<int> res;
-        int startRow=0,endRow=matrix.size()-1;
-        int startCol=0,endCol=matrix[0].size()-1;
-        while(startRow<=endRow && startCol<=endCol){
-            //Traverse Right
-            for(int c=startCol;c<=endCol;c++){
-                res.push_back(matrix[startRow][c]);
-            }
-            startRow++;
-            //Traverse Down
-            for(int r=startRow;r<=endRow;r++){
-                res.push_back(matrix[r][endCol]);
-            }
-            endCol--;
-            if(startRow<=endRow){
-                //Traverse Left
-                for(int c=endCol;c>=startCol;c--){
-                    res.push_back(matrix[endRow][c]);
+        int m=matrix.size(); //row
+        int n=matrix[0].size(); //col
+        int dir=0;
+        if(matrix.size()==0){
+            return {};
+        }
+        int top=0;
+        int down=m-1;
+        int right=n-1;
+        int left=0;
+        
+        /*
+            dir=0: left to right
+            dir=1: top to down
+            dir=2: right to left
+            dir=3: down to top
+        */
+        
+        vector<int>res;
+        while(top<=down && left<=right){
+            if(dir==0){
+                //left to right
+                //const:row
+                for(int i=left;i<=right;i++){
+                    res.push_back(matrix[top][i]);
                 }
+                top++;
             }
-            endRow--;
-
-            if(startCol<=endCol){
-                //Traverse Up
-                for(int r=endRow;r>=startRow;r--){
-                    res.push_back(matrix[r][startCol]);
+            if(dir==1){
+                //top to down
+                //const:col
+                for(int i=top;i<=down;i++){
+                    res.push_back(matrix[i][right]);
                 }
+                right--;
             }
-            startCol++;
+            if(dir==2){
+                //right to left
+                //const:row(down)
+                for(int i=right;i>=left;i--){
+                    res.push_back(matrix[down][i]);
+                }
+                down--;
+            }
+            if(dir==3){
+                //down to top
+                //const:col(left)
+                for(int i=down;i>=top;i--){
+                    res.push_back(matrix[i][left]);
+                }
+                left++;
+            }
+            dir++;
+            if(dir==4){
+                dir=0;
+            }
+            
         }
         return res;
     }
