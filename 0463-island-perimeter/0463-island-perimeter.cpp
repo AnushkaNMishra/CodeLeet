@@ -8,16 +8,16 @@ public:
             for(int j=0;j<m;j++){
                 if(grid[i][j]==1){
                     ans+=4;
-                    if(i+1<n && grid[i+1][j]==1){
+                    if(i+1<n && grid[i+1][j]==1){ //if down neighbour is present
                         ans--;
                     }
-                    if(i-1>=0 && grid[i-1][j]==1){
+                    if(i-1>=0 && grid[i-1][j]==1){ //if up neighbour is present
                         ans--;
                     }
-                    if(j-1>=0 && grid[i][j-1]==1){
+                    if(j-1>=0 && grid[i][j-1]==1){ //if left neighbour is present
                         ans--;
                     }
-                    if(j+1<m && grid[i][j+1]==1){
+                    if(j+1<m && grid[i][j+1]==1){ //if right neighbour is present
                         ans--;
                     }
                 }
