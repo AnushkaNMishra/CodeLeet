@@ -18,16 +18,16 @@ public:
                 st.pop();
             }
         }
-        string ans="";
+        string res="";
         while(!st.empty()){
             int freq=st.top().second;
             char c=st.top().first;
-            st.pop();
             for(int i=0;i<freq;i++){
-                ans+=c;
+                res+=c;
             }
+            st.pop();
         }
-        reverse(ans.begin(),ans.end());
-        return ans;
+        reverse(res.begin(),res.end());
+        return res;
     }
 };
