@@ -4,18 +4,13 @@ public:
         int n=arr.size();
         sort(arr.begin(),arr.end());
         int d=0,i=2;
-        d=abs(arr[1]-arr[0]);
+        d=arr[1]-arr[0];
         
         while(i!=n){
-            
-            int c=abs(arr[i]-arr[i-1]);
-            cout<<c;
-            if(c==d){
-                i++;
+            if(arr[i]-arr[i-1]!=d){
+                return false;
             }
-            else{
-            return false;
-            }
+            i++;
         }
         return true;
     }
