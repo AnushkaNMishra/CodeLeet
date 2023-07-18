@@ -4,6 +4,7 @@ public:
     void solve(int ind, vector<int>& nums,vector<int>& temp, vector<vector<int>>&ans){
       
            ans.push_back(temp);
+          
          
         
         for(int i=ind;i<nums.size();i++){
