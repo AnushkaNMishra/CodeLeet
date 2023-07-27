@@ -1,3 +1,10 @@
+// class Solution {
+// public:
+//     long long maxRunTime(int n, vector<int>& batteries) {
+//     }
+// };
+​
+​
 Intuition
 The problem asks us to find the maximum run time for a robot with n batteries. We have an array batteries that contains the power of each battery. The robot can only run at a constant speed of time units per battery. We need to find the maximum value of time such that the robot can run for n units of time using the given batteries.
 ​
