@@ -1,7 +1,7 @@
 class Solution {
 public:
     void solveSudoku(vector<vector<char>>& board) {
-        solve(board);
+       solve(board);
     }
     
     bool solve(vector<vector<char>>& board){
@@ -20,25 +20,18 @@ public:
                             }
                         }
                     }
-                     return false;
+                    return false;
                 }
             }
         }
-    return true;
+        return true;
     }
+    
     
     bool isvalid(vector<vector<char>>& board,int row,int col,char s){
         for(int i=0;i<9;i++){
-            if(board[row][i]==s){
+            if(board[row][i]==s || board[i][col]==s || board[3*(row/3)+i/3][3*(col/3)+i%3]==s)
                 return false;
-            }
-            else if(board[i][col]==s){
-                return false;
-            }
-            else if(board[3*(row/3)+i/3][3*(col/3)+i%3]==s){
-                return false;
-            }
-            
         }
         return true;
     }
