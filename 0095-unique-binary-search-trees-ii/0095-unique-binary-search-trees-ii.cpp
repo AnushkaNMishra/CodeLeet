@@ -42,3 +42,27 @@ public:
         return result;
     }
 };
+
+//1. we are givenm n nodes
+// we need to consider each node from 1 to n as a root
+// and  reciursively geenrate the possible left and right subtrees
+
+// 2. start = 1 end=n
+// for each i from start to end, we can consider it as the root of the currect BST
+
+//3. we can rec generate the possible left trres => values start to i-1
+   // consider i=3 THAT IS THE ROOT
+   // this is beacuse consider i=3 then at left we can have 2 and 1 , hence start=1 to i-1=3-1=2;
+//4.  generate all possible=> right subtrees with values from =>'i+1' to end 
+   // this is because we can consider i=3 where n=5 , so at right side we will have 4, 5
+
+
+//5. now for each left subtree and right subtree pair, we can create => new root node
+// that has value 'i' ==> left : set its left ; ==> right : set the right 
+
+// 6. add the new root to the resultant vector
+// 7. Repeat the steps 
+
+// for every root value i; we are going through every possible vlaue for making left and right subtree 
+// i^n  roughly u think so 
+// i=> start to end
