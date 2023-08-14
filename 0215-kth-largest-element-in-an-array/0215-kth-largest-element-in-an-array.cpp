@@ -5,6 +5,7 @@ public:
         for(auto it:nums){
             pq.push(it);
         }
+        
         while(k>1){
             pq.pop();
             k--;
