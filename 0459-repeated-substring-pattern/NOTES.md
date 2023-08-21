@@ -1,0 +1,1 @@
+https://leetcode.com/problems/repeated-substring-pattern/discuss/3942627/C%2B%2B-Solution-oror-Explained-With-Example
