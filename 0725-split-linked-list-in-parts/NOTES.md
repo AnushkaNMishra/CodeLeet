@@ -1,1 +1,1 @@
-​
+https://leetcode.com/problems/split-linked-list-in-parts/discuss/4011333/Simple-C%2B%2B-Code.
