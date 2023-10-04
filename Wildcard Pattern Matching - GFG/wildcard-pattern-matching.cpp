@@ -8,38 +8,35 @@ class Solution{
 /*You are required to complete this method*/
     int wildCard(string pattern,string str)
     {
-        int m = pattern.size();
-    int n = str.size();
-
-    // Create a table to store results of sub-problems
-    std::vector<std::vector<bool>> dp(n + 1, std::vector<bool>(m + 1, false));
-
-    // An empty pattern can only match an empty string
+        int N = str.length();
+    int M = pattern.length();
+    
+    // Create a DP table to store the results of subproblems
+    vector<vector<bool>> dp(N + 1, vector<bool>(M + 1, false));
+    
+    // Empty pattern matches empty string
     dp[0][0] = true;
-
-    // Initialize the first row (an empty string with a non-empty pattern)
-    for (int j = 1; j <= m; j++) {
+    
+    // Fill the first row (when pattern is empty)
+    for (int j = 1; j <= M; j++) {
         if (pattern[j - 1] == '*') {
             dp[0][j] = dp[0][j - 1];
         }
     }
-
-    // Fill the rest of the table using a bottom-up approach
-    for (int i = 1; i <= n; i++) {
-        for (int j = 1; j <= m; j++) {
-            // Two cases when pattern[j-1] is '*'
-            // 1) '*' acts as an empty sequence
-            // 2) '*' acts as one or more characters
-            if (pattern[j - 1] == '*') {
-                dp[i][j] = dp[i][j - 1] || dp[i - 1][j];
-            }
-            else if (pattern[j - 1] == '?' || str[i - 1] == pattern[j - 1]) {
+    
+    // Fill the DP table
+    for (int i = 1; i <= N; i++) {
+        for (int j = 1; j <= M; j++) {
+            if (pattern[j - 1] == '?' || pattern[j - 1] == str[i - 1]) {
                 dp[i][j] = dp[i - 1][j - 1];
+            } else if (pattern[j - 1] == '*') {
+                dp[i][j] = dp[i - 1][j] || dp[i][j - 1];
             }
         }
     }
-
-    return dp[n][m] ? 1 : 0;
+    
+    // The result is in the bottom-right cell of the DP table
+    return dp[N][M] ? 1 : 0;
 
     }
     
