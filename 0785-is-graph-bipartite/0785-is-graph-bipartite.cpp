@@ -8,18 +8,20 @@ public:
                 if(dfs(it,!col, color, graph)==false)
                     return false;
             }
-            else if(color[it]==col){
-                return false;
+                else if(color[it]==col){
+                    return false;
+                }
             }
-        }
+            
+        
         return true;
     }
-  
-    bool isBipartite(vector<vector<int>>& graph) {
+      bool isBipartite(vector<vector<int>>& graph) {
         int v=graph.size();
         vector<int>color(v,-1);
         for(int i=0;i<v;i++){
-            if(color[i]==-1){
+            if(color[i]==-1)//unvisited
+            {
                 if(dfs(i,0,color,graph)==false){
                     return false;
                 }
@@ -28,3 +30,6 @@ public:
         return true;
     }
 };
+
+
+
